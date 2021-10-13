@@ -66,7 +66,7 @@ public class BookController {
 		return (List<Book>) repository.findAll();
 	}
 
-	@RequestMapping("/student/{id}")
+	@RequestMapping(value = "/student/{id}", method = RequestMethod.GET)
 	public @ResponseBody Optional<Book> findBookREST(@PathVariable("id") Long bookId) {
 		return repository.findById(bookId);
 	}
